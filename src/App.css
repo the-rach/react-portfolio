@@ -1,38 +1,684 @@
-.App {
-  text-align: center;
+/********** Custom Fonts **********/
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Bold.ttf');
+  font-weight: 700;
+}
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Medium.ttf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Book.ttf');
+  font-weight: 400;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/********** Default CSS **********/
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #ffffff !important;
+  color: rgb(8, 8, 8) !important;
+  font-family: 'Centra', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+/********** Header CSS **********/
+
+nav.navbar {
+  padding: 2rem 8rem;
+  font-weight: 500;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar-logo { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem; /* 8px */
+  position: absolute;
+  left: 51%;
+  top: 0.5rem; /* 8px */
+  transform: translateX(-50%);
+}
+
+.navbar-brand {
+  background: black;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  color: #fff !important;
+  font-size: 1.5rem !important; /* 24px */
+  line-height: 2rem !important; /* 32px */
+  font: bold;
+}
+
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  padding: 0 25px;
+  font-size: 18px;
+  opacity: 0.75;
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.avtive {
+  opacity: 1;
+}
+
+.navbar-underline {
+  height: 1px;
+  display: inline-block;
+  width: 0;
+  background-color: black;
+}
+
+a.nav-link.navbar-link:hover .navbar-underline,
+a.nav-link.active.navbar-link .navbar-underline {
+  width: 90%;
+  transition: width 300ms ease;
+}
+
+.social-icon {
+  margin-right: 1rem;
+}
+
+button.navbar-toggler.collapsed {
+  border: none;
+}
+
+fnavbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* React Bootstrap Navbar collapses when screens are at a lg break point 
+or less (992px). This style will alter navbar elements on screens 992px or less */
+@media screen and (max-width: 992px){
+  /* Updates the navbar links underline styles */
+  a.nav-link.navbar-link:hover .navbar-underline,
+  a.nav-link.active.navbar-link .navbar-underline {
+    width: 10%;
+    transition: width 300ms ease;
+    display: flex;
+    margin: auto;
+  }
+
+  div#basic-navbar-nav.navbar-collapse.collapse.show {
+    padding-top: 2rem;
+  }
+
+  div.ms-auto.navbar-nav {
+    display: block;
+    padding-top: 1rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* Code below updates the navbar link underline size as screens size decreases */
+@media screen and (max-width: 800px){
+  a.nav-link.navbar-link:hover .navbar-underline,
+  a.nav-link.active.navbar-link .navbar-underline {
+    width: 15%;
+  }
+}
+
+@media screen and (max-width: 650px){
+  a.nav-link.navbar-link:hover .navbar-underline,
+  a.nav-link.active.navbar-link .navbar-underline {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 550px){
+  a.nav-link.navbar-link:hover .navbar-underline,
+  a.nav-link.active.navbar-link .navbar-underline {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 475px){
+  a.nav-link.navbar-link:hover .navbar-underline,
+  a.nav-link.active.navbar-link .navbar-underline {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 450px){
+  a.nav-link.navbar-link:hover .navbar-underline,
+  a.nav-link.active.navbar-link .navbar-underline {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 430px){
+  a.nav-link.navbar-link:hover .navbar-underline,
+  a.nav-link.active.navbar-link .navbar-underline {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 400px){
+  a.nav-link.navbar-link:hover .navbar-underline,
+  a.nav-link.active.navbar-link .navbar-underline {
+    width: 55%;
+  }
+}
+
+/* Code above updates the navbar link underline size as screens size decreases */
+
+/* 450px is the point where the logo begins to overlap with the hamburger button 
+The code below keeps the hamburger button to the left of the logo 
+& adjust navvar styles on smaller screens */
+@media screen and (max-width: 450px){
+  button.navbar-toggler {
+    position: absolute;
+    right: 85%;
+    top: 35px;
+  }
+
+  div#basic-navbar-nav.navbar-collapse.collapse.show {
+    padding-top: 4rem;
+  }
+
+  nav.navbar {
+    padding-bottom: 4rem;
+  }
+}
+
+/********** Home Css **********/
+
+.home-container {
   min-height: 100vh;
+}
+
+#home-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-bottom: 2rem;
+}
+
+.profile-img {
+  height: auto;
+  width: 100%;
+}
+
+div#home-content.col div.container {
+  display: flex;
+}
+
+.resume-button {
+  padding-left: 20px !important; 
+  padding-right: 20px !important;
+  font-weight: bold !important;
+  border-width: 1.5px !important;
+}
+
+.resume-button .link-arrow {
+  width: 1rem; 
+  margin-left: 0.25rem; /* 4px */
+}
+
+.resume-button:hover {
+  background-color: white !important;
+  color: black !important;
+}
+
+#contact-link {
+  margin-left: 1rem;
+  font-weight: 500;
+  color: black;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/********** AnimatedText **********/
+
+.animatedText {
+  overflow: hidden;
+}
+
+.animatedText h1 {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.animatedText h1 span {
+  display: inline-block;
+}
+
+.about-animatedText {
+  font-size: 3rem !important;
+  padding-top: 2rem;
+  padding-bottom: 7rem;
+}
+
+/* .home-animatedText {
+  font-size: 3.75rem !important;
+  text-align: left;
+} */
+
+/********** About **********/
+
+div.container about {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+}
+
+.gridRow {
+  gap: 4rem;
+}
+
+.bio-column {
+  text-align: left;
+}
+
+h2.bio {
+  margin-bottom: 1rem; /* 16px */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.75);
+  text-transform: uppercase;
+}
+
+.profile-img-col {
+  max-height: 100%;
+  position: relative;
+}
+
+.rachel-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  border-width: 2px;
+  border-style: solid;
+  padding: 2rem;
+}
+
+.accolades {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+div.col.accolades div.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.col.accolades div.container span {
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+div.col.accolades div.container h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+/* For screen sizes  <= lg (1200px) */
+@media screen and (max-width: 1200px){
+  .accolades {
+    flex-direction: row;
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .rachel-photo {
+    width: 288px;
+    height: 390px;
+  }
+
+  .profile-img-col {
+    order: 1;
+  }
+
+  .bio-column {
+    order: 2;
+  }
+
+  .accolades {
+    order: 3;
+  }
+
+  .about-animatedText {
+    padding-bottom: 2.5rem;
+  }
+}
+
+/********** Skills **********/
+
+.skills-title {
+  font-weight: bold;
+  font-size: 6rem;
+  margin-top: 16rem;
+  width: 100%;
+  text-align: center;
+}
+
+.skills {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: repeating-radial-gradient(rgba(0,0,0,0.4) 2px, white 5px, white 100px);
+}
+
+div.container div.skills .center-skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  background-color: black;
   color: white;
+  padding: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6);
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+#outer-skills {
+  position: absolute;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Screens <= size Large (992px) */
+@media screen and (max-width: 992px) {
+  .skills-title {
+    margin-top: 8rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Large screens */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  #outer-skills {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
+
+  .skills {
+    height: 80vh;
+    background: repeating-radial-gradient(rgba(0,0,0,0.4) 2px, white 5px, white 80px);
+  }
+}
+
+/* Medium Screens */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #outer-skills {
+    font-size: 0.875rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .skills {
+    height: 60vh;
+    background: repeating-radial-gradient(rgba(0,0,0,0.4) 2px, white 5px, white 60px);
+  }
+
+  .skills-title {
+    font-size: 3.75rem;
+  }
+}
+
+/* Small Screens */
+@media screen and (max-width: 768px) {
+  #outer-skills {
+    background-color: transparent;
+    color: black;
+    box-shadow: none;
+  }
+  
+  div.container div.skills .center-skill {
+    font-size: 0.875rem;
+  }
+
+  .skills {
+    height: 50vh;
+    background: repeating-radial-gradient(rgba(0,0,0,0.4) 2px, white 3.5px, white 40px);
+  }
+
+  .skills-title {
+    font-size: 3.75rem;
+  }
+}
+
+/********** Experience & Education Css **********/
+
+div.container:has(.education-experience-title) {
+  min-height: 100vh;
+}
+
+.education-experience-title {
+  margin-top: 16rem;
+  margin-bottom: 16rem;
+  font-size: 6rem;
+  margin-bottom: 8rem;
+  font-weight: bold;
+}
+
+.education-experience-container {
+  width: 85% !important;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; /* Necessary for animated line positioning */
+  text-align: left;
+}
+
+.education-experience-list {
+  margin-left: 1rem;
+}
+
+.animated-line {
+  position: absolute;
+  left: 2.25rem;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: black;
+  transform-origin: top;
+}
+
+.details {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details > :first-child {
+  margin-top: 0;
+}
+
+.details > :last-child {
+  margin-bottom: 0;
+}
+
+.details-title {
+  font-size: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.company-link {
+  color:#ec597e;
+  text-transform: capitalize;
+}
+
+.time-place {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+.details-info {
+  font-weight: 500;
+  width: 100%;
+}
+
+.animated-circles {
+  position: absolute;
+  left: 0;
+  stroke: black;
+  transform: translateY(-3px);
+}
+
+.animated-circles svg {
+  transform: rotate(-90deg);
+}
+
+.circle {
+  stroke-width: 1;
+}
+
+#circle-1 {
+  stroke: #ec597e;
+  fill: none;
+}
+
+#circle-2 {
+  stroke-width: 5px;
+  fill: white;
+}
+
+@keyframes fade { 
+  0%, 100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+
+#circle-3 {
+  fill: #ec597e;
+  animation: fade 1.5s infinite;
+}
+
+/* Large screens */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .education-experience-container {
+    width: 90% !important;
+  }
+}
+
+/* Medium Screens */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .education-experience-title {
+    font-size: 3.75rem;
+    margin-bottom: 4rem;
+  }
+
+  .details {
+    width: 80%;
+  }
+
+  .animated-line {
+    width: 2px;
+    left: 30px;
+  }
+
+  .animated-circles svg {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Small Screens */
+@media screen and (max-width: 768px) {
+  .education-experience-container {
+    width: 100% !important;
+  }
+
+  .education-experience-title {
+    font-size: 3.75rem;
+  }
+
+  .details-title {
+    font-size: 1.25rem;
+  }
+
+  .time-place, .details-info {
+    font-size: 0.875rem;
+  }
+
+  .education-experience-list {
+    margin-left: 0.5rem;
+  }
+
+  .animated-circles svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .animated-circles {
+    left: 17px;
+  }
+}
+
+
+/********** Projects Css **********/
+
+
+/********** Footer Css **********/
+
+footer {
+  width: 100%;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-color: black;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+footer div.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  justify-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+/********** APP CSS **********/
+
+.App {
+  text-align: center;
 }
