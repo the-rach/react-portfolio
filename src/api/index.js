@@ -1,7 +1,15 @@
 import axios from 'axios'
 
+var url;
+if (process.env.NODE_ENV === "development") {
+    url = 'http://localhost:8000/api';
+}
+else {
+    url = 'http://rachelgrant.me/api';
+}
+
 const api = axios.create({
-    baseURL: 'http://rachelgrant.me/api',
+    baseURL: url,
 })
 
 export const insertEducation = payload => api.post(`/education`, payload)
