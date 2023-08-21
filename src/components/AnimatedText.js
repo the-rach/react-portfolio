@@ -27,6 +27,12 @@ const singleWord = {
     }
 }
 
+/*
+ * This component displays the Animated Text for page headings.
+ *
+ * @param {*} {text, className=""}
+ * @return {*} 
+ */
 export const AnimatedText = ({text, className=""}) => {
     return (
         <div className="animatedText">

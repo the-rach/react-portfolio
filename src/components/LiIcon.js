@@ -1,5 +1,11 @@
 import { motion, useScroll } from "framer-motion"
 
+/*
+ * Display a list item for Education and Experience lists.
+ *
+ * @param {*} {reference}
+ * @return {*} 
+ */
 export const LiIcon = ({reference}) => {
     const {scrollYProgress} = useScroll(
         {

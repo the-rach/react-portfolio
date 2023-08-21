@@ -1,5 +1,10 @@
 import * as React from "react";
 
+/*
+ * Displays Linkedin Icon 
+ *
+ * @param {*} {className, ...rest}
+ */
 export const LinkedInIcon = ({className, ...rest}) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +26,11 @@ export const LinkedInIcon = ({className, ...rest}) => (
     </svg>
   );
 
+  /*
+   * Displays Github Icon
+   *
+   * @param {*} {className, ...rest}
+   */
   export const GithubIcon = ({className, ...rest}) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +48,11 @@ export const LinkedInIcon = ({className, ...rest}) => (
     </svg>
   );
 
+  /*
+   * Displays LinkArrow for resume download button
+   *
+   * @param {*} { className, ...rest }
+   */
   export const LinkArrow = ({ className, ...rest }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"

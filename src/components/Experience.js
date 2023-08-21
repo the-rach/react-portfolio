@@ -3,6 +3,12 @@ import { useRef } from 'react'
 import { motion, useScroll } from "framer-motion"
 import { LiIcon } from "./LiIcon"
 
+/*
+ * Displays details for Experience item.
+ *
+ * @param {*} {position, company, companyLink, time, address, work}
+ * @return {*} 
+ */
 const Details = ({position, company, companyLink, time, address, work}) => {
     const ref = useRef(null);
 
@@ -25,6 +31,11 @@ const Details = ({position, company, companyLink, time, address, work}) => {
     )
 }
 
+/*
+ * This component displays Experience list.
+ *
+ * @return {*} 
+ */
 export const Experience = () => {
 
     const ref = useRef(null);

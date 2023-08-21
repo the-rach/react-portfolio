@@ -5,7 +5,12 @@ import { Experience } from "../components/Experience";
 import { Skills } from '../components/Skills';
 import { AnimatedText } from '../components/AnimatedText'
 
-
+/*
+ * Render the about page for the developer profile.
+ * Includes the Biography and renders the Skills, Education, and Experience components.
+ *
+ * @return {*} 
+ */
 export const About = () => {
     return (
         <>

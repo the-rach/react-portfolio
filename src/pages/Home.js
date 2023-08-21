@@ -5,6 +5,12 @@ import resume from '../assets/Rachel_Grant_Resume.pdf';
 import { LinkArrow } from '../components/Icons.js';
 import {AnimatedText} from '../components/AnimatedText.js'
 
+/*
+ * Render the home page for the developer portfolio.
+ * Includes developer profile image, title, subtitle, resume link, & contact link.
+ *
+ * @return {*} 
+ */
 export const Home = () => {
 
     return (

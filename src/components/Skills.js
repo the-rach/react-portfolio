@@ -3,6 +3,12 @@ import 'react-multi-carousel/lib/styles.css';
 import {motion} from "framer-motion";
 
 
+/*
+ * Displays Skill item.
+ *
+ * @param {*} {name, x, y}
+ * @return {*} 
+ */
 const Skill = ({name, x, y}) => {
     return (
         <motion.div className="center-skill" id="outer-skills" whileHover={{scale:1.05}}
@@ -15,6 +21,11 @@ const Skill = ({name, x, y}) => {
     )
 }
 
+/*
+ * Displays Skills component.
+ *
+ * @return {*} 
+ */
 export const Skills = () => {
 
       return (
