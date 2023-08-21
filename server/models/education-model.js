@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+/**
+ * Represents the Education schema for MongoDB documents.
+ * @class
+ */
 const Education = new Schema(
     { 
         type: { type: String },
@@ -11,4 +15,8 @@ const Education = new Schema(
     }
 )
 
+/**
+ * The Mongoose model for the 'education' collection.
+ * @type {EducationModel}
+ */
 module.exports = mongoose.model('education', Education)

@@ -1,5 +1,11 @@
 const Education = require('../models/education-model')
 
+/**
+ * Create a new education entry.
+ *
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ */
 createEducation = (req, res) => {
     const body = req.body
     
@@ -33,6 +39,12 @@ createEducation = (req, res) => {
         })
 }
 
+/**
+ * Update an existing education entry.
+ *
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ */
 updateEducation = async (req, res) => {
     const body = req.body
 
@@ -51,7 +63,7 @@ updateEducation = async (req, res) => {
             foundEducation.time = body.time;
             foundEducation.place = body.place;
             foundEducation.info = body.info;
-            foundEducation.save(); //todo: does this neccessitate a .then() below?
+            foundEducation.save(); 
             return res.status(200).json({
                 success: true,
                 id: foundEducation._id,
@@ -70,6 +82,12 @@ updateEducation = async (req, res) => {
     } 
 }
 
+/**
+ * Delete an education entry by ID.
+ *
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ */
 deleteEducation = async (req, res) => {
     let deletedEducation;
     try {
@@ -83,6 +101,12 @@ deleteEducation = async (req, res) => {
     } 
 }
 
+/**
+ * Get an education entry by ID.
+ *
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ */
 getEducationById = async (req, res) => {
     let foundEducation;
     try {
@@ -96,6 +120,12 @@ getEducationById = async (req, res) => {
     } 
 }
 
+/**
+ * Get all education entries.
+ *
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ */
 getEducations = async (req, res) => {
     let foundEducations;
     try {

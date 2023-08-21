@@ -5,6 +5,13 @@ import { LiIcon } from "./LiIcon"
 import api from '../api'
 import { useState, useEffect } from 'react'
 
+/*
+ * Displays Details for Education item.
+ * Includes LiIcon component.
+ *
+ * @param {*} {type, time, place, info}
+ * @return {*} 
+ */
 const Details = ({type, time, place, info}) => {
     const ref = useRef(null);
 
@@ -26,6 +33,12 @@ const Details = ({type, time, place, info}) => {
     )
 }
 
+/*
+ * This component displays Education list.
+ *
+ * @param {*} {text, className=""}
+ * @return {*} 
+ */
 export const Education = () => {
 
     const ref = useRef(null);

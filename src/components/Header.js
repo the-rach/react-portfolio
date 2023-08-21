@@ -4,6 +4,12 @@ import { useState } from "react"
 import { motion } from "framer-motion";
 import { LinkedInIcon, GithubIcon } from './Icons';
 
+/*
+ * This component dispalys the header of the website.
+ * It includes the navigation bar, logo, and social icons.
+ *
+ * @return {*} 
+ */
 export const Header = () => {
 
     const {activeLink, setActiveLink} = useState('home');
