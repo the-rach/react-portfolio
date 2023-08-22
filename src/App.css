@@ -110,6 +110,10 @@ nav.navbar .navbar-toggler:focus {
   box-shadow: none;
 }
 
+div#navbar-items-container { 
+  display: contents;
+}
+
 /* React Bootstrap Navbar collapses when screens are at a lg break point 
 or less (992px). This style will alter navbar elements on screens 992px or less */
 @media screen and (max-width: 992px){
@@ -122,7 +126,8 @@ or less (992px). This style will alter navbar elements on screens 992px or less 
     margin: auto;
   }
 
-  div#basic-navbar-nav.navbar-collapse.collapse.show {
+  div#navbar-items-container { 
+    display: block;
     padding-top: 2rem;
   }
 
@@ -194,7 +199,8 @@ The code below keeps the hamburger button to the left of the logo
     top: 35px;
   }
 
-  div#basic-navbar-nav.navbar-collapse.collapse.show {
+  div#navbar-items-container { 
+    display: block;
     padding-top: 4rem;
   }
 

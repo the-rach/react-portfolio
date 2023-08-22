@@ -36,29 +36,32 @@ export const Header = () => {
                                 >RG</MotionNavLink>
                     </div>
                     
-                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Navbar.Collapse id="basic-navbar-nav">
 
-                        <Nav>
-                            <Nav.Link as={NavLink} to="/" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home
-                                <span className="navbar-underline">&nbsp;</span>
-                            </Nav.Link>
-                            <Nav.Link as={NavLink} to="/about" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>About
-                                <span className="navbar-underline">&nbsp;</span>
-                            </Nav.Link>
-                            {/* <Nav.Link as={NavLink} to="/projects" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects
-                                <span className="navbar-underline">&nbsp;</span>
-                            </Nav.Link> */}
-                        </Nav>
+                            <div id="navbar-items-container">
+                                <Nav>
+                                    <Nav.Link as={NavLink} to="/" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home
+                                        <span className="navbar-underline">&nbsp;</span>
+                                    </Nav.Link>
+                                    <Nav.Link as={NavLink} to="/about" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>About
+                                        <span className="navbar-underline">&nbsp;</span>
+                                    </Nav.Link>
+                                    {/* <Nav.Link as={NavLink} to="/projects" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects
+                                        <span className="navbar-underline">&nbsp;</span>
+                                    </Nav.Link> */}
+                                </Nav>
 
-                        <Nav className="ms-auto">
-                            <MotionNavLink to={"https://www.linkedin.com/in/rachel-grant-41852a236/"} target="_blank" className="social-icon" whileHover={{ y: -5}} whileTap={{scale:0.9}}>
-                                <LinkedInIcon />
-                            </MotionNavLink>
-                            <MotionNavLink to={"https://github.com/the-rach"} target="_blank" whileHover={{ y: -5}} whileTap={{scale:0.9}} >
-                                 <GithubIcon />
-                             </MotionNavLink>
-                        </Nav>
-                    </Navbar.Collapse>
+                                <Nav className="ms-auto">
+                                    <MotionNavLink to={"https://www.linkedin.com/in/rachel-grant-41852a236/"} target="_blank" className="social-icon" whileHover={{ y: -5}} whileTap={{scale:0.9}}>
+                                        <LinkedInIcon />
+                                    </MotionNavLink>
+                                    <MotionNavLink to={"https://github.com/the-rach"} target="_blank" whileHover={{ y: -5}} whileTap={{scale:0.9}} >
+                                        <GithubIcon />
+                                    </MotionNavLink>
+                                </Nav>
+                            </div>
+                        </Navbar.Collapse>
+                    
                     
             </Navbar>
         </>
