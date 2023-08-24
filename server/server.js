@@ -1,4 +1,6 @@
-const express = require('express')
+const express = require('express');
+const https = require('https');
+const fs = require('fs'); // Required for reading certificates
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
@@ -34,10 +36,10 @@ app.get('/', (req, res) => {
 app.use('/api', educationRouter)
 
 /*
- * Start the API server and listen on the specified port.
- * @name listen
- * @function
- * @param {number} port - The port to listen on.
- * @param {Function} callback - The callback function to execute once the server is running.
- */
+  * Start the API server and listen on the specified port.
+  * @name listen
+  * @function
+  * @param {number} port - The port to listen on.
+  * @param {Function} callback - The callback function to execute once the server is running.
+  */
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))

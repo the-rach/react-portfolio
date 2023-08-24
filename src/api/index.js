@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === "development") {
     url = 'http://localhost:8000/api';
 }
 else {
-    url = 'http://rachelgrant.me/api';
+    url = 'https://rachelgrant.me/api';
 }
 
 const api = axios.create({
